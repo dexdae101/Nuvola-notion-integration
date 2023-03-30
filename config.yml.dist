@@ -4,3 +4,5 @@ credentials:
   username: ~
   password: ~
   student_id: ~
+options:
+  max_age: ~
