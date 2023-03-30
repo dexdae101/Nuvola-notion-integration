@@ -25,6 +25,4 @@ def update(data):
 		}
 		notion.pages.create(parent={"database_id": config["credentials"]["database_id"]}, properties=new_page)
 
-
-#update(n.compiti(12))
-print(n.compiti(1))
+update(n.compiti(12))
