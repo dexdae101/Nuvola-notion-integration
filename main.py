@@ -2,7 +2,7 @@ from nuvola_api import *
 from notion_client import Client
 from datetime import datetime
 from yaml import safe_load
-
+from threading import Timer
 
 with open("config.yml", "r") as file:
 	config = safe_load(file)
@@ -40,5 +40,11 @@ def cleanup(force=False):
 	for i in delete:
 		del used[i]
 
-update(n.compiti(12))
-cleanup()
+
+def main():
+	print("Running!")
+	update(n.compiti(config["options"]["max_age"]))
+	cleanup()
+	t = Timer(config["options"]["update_intervall"], main).start()
+
+main()

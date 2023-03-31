@@ -6,3 +6,5 @@ credentials:
   student_id: ~
 options:
   max_age: ~
+  update_intervall: ~
+  update_timeframe: ~
