@@ -42,7 +42,6 @@ def cleanup(force=False):
 
 
 def main():
-	print("Running!")
 	update(n.compiti(config["options"]["max_age"]))
 	cleanup()
 	t = Timer(config["options"]["update_intervall"], main).start()

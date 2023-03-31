@@ -38,8 +38,6 @@ class nuvola():
 			start_date = datetime.datetime.strftime(start_date, '%d-%m-%Y')
 			end_date = datetime.datetime.strftime(end_date, '%d-%m-%Y')
 
-			print(start_date, end_date)
-
 			response = self.s.get(f"https://nuvola.madisoft.it/api-studente/v1/alunno/{self.student_id}/compito/elenco/{str(start_date)}/{str(end_date)}", headers=self.headers)
 			response.raise_for_status()
 			data = loads(str(response.content, "UTF-8"))
